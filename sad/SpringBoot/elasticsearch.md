@@ -18,7 +18,7 @@ Elasticsearch kibanna beats logstash
 对应的Elasticsearch版本为**7.6.2**
 
 ```xml
-<dependency>
+```````````<dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
 </dependency>
@@ -236,3 +236,21 @@ public static void main(String[] args) throws  Exception{
 }
 ```
 
+### elasticsearch中一些方法和类简要记录
+
+NativeSearchQuery  查询结果高亮显示
+
+bool query（组合查询）是把任意多个简单查询组合在一起，使用 **must**、**should**、**must_not**、**filter** 选项来表示简单查询之间的逻辑，每个选项都可以出现 0 次到多次。它是为了满足现实中比较复杂的查询需求，如需要在多个字段上查询多种多样的文本，并且根据一系列的标准来过滤。
+
+```java
+    @Autowired
+    private ElasticsearchRestTemplate restTemplate;
+    @Autowired
+    private EmployeeRepository repository;
+
+操作索引和数据时需要用到这两个数据
+```
+
+BulkRequest对象可以用来在一次请求中，执行多个索引、更新或删除操作
+
+### 批量操作

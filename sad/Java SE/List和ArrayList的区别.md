@@ -20,7 +20,7 @@ ArrayList list=newArrayList();//创建一对象则保留了ArrayList的所有属
 
 问题就在于List接口有多个实现类，现在你用的是ArrayList，也许哪一天你需要换成其它的实现类，如 LinkedList或者Vector等等，这时你只要改变这一行就行了： List list = new LinkedList(); 其它使用了list地方的代码根本不需要改动。
 
-![](https://pic3.zhimg.com/80/v2-76c3c04de2e8609c488fa0081fb99c26_1440w.png)
+![v2-76c3c04de2e8609c488fa0081fb99c26_1440w](E:\Sadnote\sad\picture\v2-76c3c04de2e8609c488fa0081fb99c26_1440w.png)
 
 > 这张图里的内容对我们学习Java来说，非常的重要，白色的部分是需要去了解的，黄色部分是我们要去重点了解的，不但要知道怎么去用，至少还需要读一次源码。绿色部分内容已经很少用了，但在面试题中有可能会问到，我们来看一个经常出现的面试题：**Arraylist与Vector的区别是什么？**
 
