@@ -106,7 +106,7 @@ collection中有个迭代器方法
  * get方法没有这个步骤(源码)   
  * 下面分别展示迭代器遍历和for循环遍历(foreach的本质就是迭代器)
  */
-
+ 
 
         for (int i=0;i< list.size();i++){
             String s=list.get(i);
@@ -158,3 +158,23 @@ hashCode（）该方法可以返回对象的hash值
 > 因为set不包含重复元素  所以给两个set对象赋相同的值   它们的哈希值相同
 
 重写hashCode（）方法，可以使哈希值相同
+
+
+
+```
+Set<类>  set=new HashSet<>();  
+HashSet集合保证元素唯一性
+默认初始容量为16
+```
+
+
+
+### 4.2哈希表
+
+数组加链表实现        
+
+![ED22EFB5-97FC-4a53-9F72-956BF4CF847E](E:\Sadnote\sad\picture\ED22EFB5-97FC-4a53-9F72-956BF4CF847E.png)
+
+
+
+## 5.map集合

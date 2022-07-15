@@ -19,9 +19,22 @@ LEFT JOIN table_name2
 ON table_name1.column_name=table_name2.column_name
 ```
 
+```sql
+SELECT  bmi_basic_library.id,bmi_basic_library.library_name,bmi_basic_library.latest_version_id,bmi_basic_library.tenant_id,bmi_basic_library_version.remark,bmi_basic_library.update_time,bmi_basic_library_version.is_os_necessary,bmi_basic_library_version.function_description FROM  bmi_basic_library 
+LEFT JOIN  bmi_basic_library_version
+ON  bmi_basic_library.latest_version_id=bmi_basic_library_version.version_number
+```
 
 
 
+
+
+```sql
+SELECT bmi_basic_library_version_tag.tag_id,bmi_tag.tag_name
+FROM bmi_basic_library_version_tag
+LEFT  JOIN bmi_tag
+ON bmi_basic_library_version_tag.id=bmi_tag.id
+```
 
 LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。
 
