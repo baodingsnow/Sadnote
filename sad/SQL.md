@@ -20,9 +20,18 @@ ON table_name1.column_name=table_name2.column_name
 ```
 
 ```sql
-SELECT  bmi_basic_library.id,bmi_basic_library.library_name,bmi_basic_library.latest_version_id,bmi_basic_library.tenant_id,bmi_basic_library_version.remark,bmi_basic_library.update_time,bmi_basic_library_version.is_os_necessary,bmi_basic_library_version.function_description FROM  bmi_basic_library 
+SELECT  bmi_basic_library.id,
+bmi_basic_library.library_name,
+bmi_basic_library.latest_version_id,
+bmi_basic_library_version.remark,
+bmi_basic_library_version.is_os_necessary,
+bmi_basic_library_version.function_description,
+bmi_basic_library.update_time,
+bmi_basic_library.create_time,
+bmi_basic_library_version.serial_number
+FROM  bmi_basic_library 
 LEFT JOIN  bmi_basic_library_version
-ON  bmi_basic_library.latest_version_id=bmi_basic_library_version.version_number
+ON  bmi_basic_library.latest_version_id=bmi_basic_library_version.id
 ```
 
 
@@ -131,3 +140,86 @@ id、result语句属性配置细节：
 | typeHandler | 使用这个属性可以覆写类型处理器。这项值可以是一个完整的类名，也可以是一个类型别名。 |
 
 #### **collection聚集**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+基础库名称 bmi_basic_library      library_name
+* 版本号: bmi_basic_library_version       version_number
+描述      bmi_basic_library_version     function_description
+标签      bmi_tag     tag_name
+OS必备库  bmi_basic_library_version      is_os_necessary
+备注    bmi_basic_library_version       remark
+
+```
+
+
+
+
+
+
+
+```SQL
+/**
+* 首先 basic——library表里添加 library name   会自动生成id
+将id  传给library——version 里的version_number    library_version自动生成id
+tag表里 新建 标签名字  自动生成 id(tag_id)
+version_tag表里添加library_id library_version_id  tag_id 自动生成id
+
+/
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
